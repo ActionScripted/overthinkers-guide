@@ -10,7 +10,11 @@ start: up
 stop: down
 
 # Recipes: Targets
-up: ## Run locally via Docker/Compose
+down: ## Stop local services
+	docker compose down
+shell: ## Run shell in Hugo container
+	docker compose run --entrypoint="" hugo sh
+up: ## Run services locally
 	docker compose up
 
 help: ## Show help
