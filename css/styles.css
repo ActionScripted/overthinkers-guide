@@ -1,0 +1,38 @@
+body {
+}
+
+html,
+body {
+  background: #495c67;
+  color: #fff;
+  border: 0;
+  box-sizing: border-box;
+  font: 200 100%/1.5 "Helvetica Neue", Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.global-header,
+.global-footer {
+  margin: 2em;
+  text-align: center;
+}
+
+.section-block {
+  background: rgba(255, 255, 255, 0.1);
+  margin: 2em auto;
+  max-width: 48em;
+  padding: 1.5em 2em;
+  width: 80%;
+}
+.section-block > *:first-child {
+  margin-top: 0;
+}
+.section-block > *:last-child {
+  margin-bottom: 0;
+}
