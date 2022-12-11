@@ -1,5 +1,10 @@
 name: github pages
 
+defaults:
+  run:
+    shell: bash
+    working-directory: overthinkers-guide
+
 on:
   push:
     branches:
