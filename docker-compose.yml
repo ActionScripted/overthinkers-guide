@@ -1,9 +1,11 @@
 version: "3.9"
 services:
-  server:
+  hugo:
     image: klakegg/hugo:0.107.0
-    command: server
-    volumes:
-      - ".:/src"
+    command: server --disableFastRender
+    environment:
+      - HUGO_ENV=DEV
     ports:
       - "1313:1313"
+    volumes:
+      - "./overthinkers-guide:/src"
