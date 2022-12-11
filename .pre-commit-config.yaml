@@ -1,0 +1,41 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v2.3.0
+    hooks:
+      - id: check-executables-have-shebangs
+      - id: check-merge-conflict
+      - id: check-toml
+      - id: check-yaml
+      - id: requirements-txt-fixer
+      - id: trailing-whitespace
+  - repo: https://github.com/lovesegfault/beautysh
+    rev: v6.2.1
+    hooks:
+      - id: beautysh
+        args: ["--force-function-style", "fnpar", "--indent-size", "4"]
+  - repo: https://github.com/psf/black
+    rev: 22.6.0
+    hooks:
+      - id: black
+        name: black
+        args: ["--config", "pyproject.toml"]
+  - repo: https://github.com/pycqa/isort
+    rev: 5.10.1
+    hooks:
+      - id: isort
+        name: isort (python)
+  - repo: https://github.com/myint/autoflake
+    rev: "v1.4"
+    hooks:
+      - id: autoflake
+        args: ["--in-place", "--remove-all-unused-imports"]
+  - repo: https://github.com/pycqa/flake8
+    rev: 4.0.1 # pick a git hash / tag to point to
+    hooks:
+      - id: flake8
+        args: ["--config", ".flake8"]
+  - repo: https://github.com/pre-commit/mirrors-prettier
+    rev: v2.7.1
+    hooks:
+      - id: prettier
+        files: \.(js|ts|jsx|tsx|css|less|html|json|markdown|md|yaml|yml)$
