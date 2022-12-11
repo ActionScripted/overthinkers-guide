@@ -1,4 +1,10 @@
-name: github pages
+name:
+  github pages
+
+  # Allow one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
 
 defaults:
   run:
