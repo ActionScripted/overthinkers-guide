@@ -1,4 +1,7 @@
-body {
+/* Fun fact: root == html but more specific */
+:root {
+  --legacy-green-1: #90bd9c;
+  --legacy-gray-1: #495c67;
 }
 
 html,
@@ -35,4 +38,14 @@ body {
 }
 .section-block > *:last-child {
   margin-bottom: 0;
+}
+
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--legacy-green-1);
 }
