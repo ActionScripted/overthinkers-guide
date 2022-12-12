@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* Fun fact: root == html but more specific */
 :root {
   --legacy-green-1: #90bd9c;
