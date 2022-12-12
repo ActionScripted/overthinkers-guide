@@ -13,7 +13,7 @@ stop: down
 down: ## Stop local services
 	docker compose down
 shell: ## Run shell in Hugo container
-	docker compose run --entrypoint="" hugo sh
+	docker compose run --entrypoint="" --rm hugo sh
 up: ## Run services locally
 	docker compose up
 
