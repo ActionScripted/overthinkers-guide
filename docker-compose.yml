@@ -9,3 +9,12 @@ services:
       - "1313:1313"
     volumes:
       - "./overthinkers-guide:/src"
+  theme-brain:
+    build:
+      context: ./overthinkers-guide/themes/brain
+      dockerfile: ./Dockerfile
+    command: npm run watch-tw
+    # Required to keep it running
+    tty: true
+    volumes:
+      - "./overthinkers-guide/themes/brain:/usr/src/app"

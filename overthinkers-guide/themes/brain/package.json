@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build-tw": "npx tailwindcss -i ./assets/main.css -o ./static/styles.css",
-    "watch-tw": "npx tailwindcss -i ./assets/main.css -o ./static/styles.css -w",
+    "watch-tw": "npx tailwindcss -i ./assets/main.css -o ./static/styles.css --watch --poll",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
