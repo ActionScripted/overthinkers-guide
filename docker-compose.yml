@@ -1,7 +1,7 @@
 version: "3.9"
 services:
   hugo:
-    image: klakegg/hugo:0.107.0
+    image: klakegg/hugo:0.107.0-ext
     command: server --disableFastRender
     environment:
       - HUGO_ENV=DEV
@@ -9,12 +9,3 @@ services:
       - "1313:1313"
     volumes:
       - "./overthinkers-guide:/src"
-  theme-brain:
-    build:
-      context: ./overthinkers-guide/themes/brain
-      dockerfile: ./Dockerfile
-    command: npm run watch-tw
-    # Required to keep it running
-    tty: true
-    volumes:
-      - "./overthinkers-guide/themes/brain:/usr/src/app"
