@@ -16,6 +16,7 @@ shell: ## Run shell in Hugo container
 	docker compose run --entrypoint="" --rm hugo sh
 up: ## Run services locally
 	docker compose up
+	open "http://localhost:1313"
 
 help: ## Show help
 	@echo "Usage: make [recipe]\n\nRecipes:"

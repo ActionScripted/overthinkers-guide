@@ -1,7 +1,32 @@
 /** Variables */
+$c-blue-1: #072235;
+$c-blue-2: #213745;
+$c-blue-3: #00C2F4;
+$c-blue-4: #62CBDE;
 $c-gray-1: #495c67;
-$c-green-1: #90bd9c;
-$c-white-1: #fff;
+$c-green-1: #0C4A22;
+$c-green-2: #4DCC00;
+$c-green-3: #81CE99;
+$c-orange: #FFA616;
+$c-purple-1: #4E5CA5;
+$c-purple-2: #7B598E;
+$c-red-1: #CD1F44;
+$c-white-1: #EFEFEF;
+$c-yellow-1: #F2ECB8;
+
+
+/** Fonts */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital@0;1&family=IBM+Plex+Sans+Condensed:ital@0;1&family=IBM+Plex+Sans:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&family=IBM+Plex+Serif:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
+
+$f-comfortaa-sans: 'Comfortaa';
+$f-plex-mono: 'IBM Plex Mono', monospace;
+$f-plex-sans-cond: 'IBM Plex Sans Condensed', sans-serif;
+$f-plex-sans: 'IBM Plex Sans', sans-serif;
+$f-plex-serif: 'IBM Plex Serif', serif;
+$f-rubik-sans: 'Rubik', sans-serif;
+$f-system-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
 
 
 // Fun fact: root == html but more specific
@@ -10,48 +35,132 @@ $c-white-1: #fff;
   --legacy-green-1: #{$c-green-1};
 }
 
+::selection {
+  background: rgba($c-red-1, 1);
+}
+
 html,
 body {
-  background: $c-gray-1;
+  background: $c-blue-1;
   border: 0;
   box-sizing: border-box;
   color: $c-white-1;
-  font: normal 100%/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  cursor: default;
+  font: normal 110%/1.55 $f-plex-sans;
   margin: 0;
   padding: 0;
 }
 *,
-*:before,
-*:after {
-  box-sizing: inherit;
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+
+  .global-header,
+  .global-footer {
+    margin: 2em;
+    text-align: center;
+  }
+
+  .section-block {
+    margin: 2em auto;
+    max-width: 48em;
+    padding: 1.5em 2em;
+    width: 80%;
+  }
+  .section-block > *:first-child {
+    margin-top: 0;
+  }
+  .section-block > *:last-child {
+    margin-bottom: 0;
+  }
+
+  a, h1, h2, h3, h4, h5, h6 {
+    color: $c-green-2;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: $f-comfortaa-sans;
+    font-weight: 900;
+
+    /*
+    -webkit-text-stroke: 1px $c-green-2;
+    color: white;
+    text-shadow:
+    2px 2px 0 #{rgba($c-green-1, 20)},
+    -1px -1px 0 #{rgba($c-green-1, 20)},
+    1px -1px 0 #{rgba($c-green-1, 20)},
+    -1px 1px 0 #{rgba($c-green-1, 20)},
+    1px 1px 0 #{rgba($c-green-1, 20)};
+     */
+
+$value: ();
+@for $i from 1 through 100 {
+  $num: $i + px;
+  $pct: $i / 100;
+  $black: (0.4 - $pct)/2.5;
+  $theShadow: $num $num ($i*.25) + px rgba($c-green-1, $black);
+  $value: append($value, $theShadow, comma)
+}
+transform-origin: center;
+text-shadow: $value;
+
 }
 
-.global-header,
-.global-footer {
-  margin: 2em;
-  text-align: center;
+@keyframes scatter {
+  0% {
+    top: 0;
+  }
+  50% {
+    top: -.25em;
+    transform: scale(1.1) perspective(500px) translate3d(-100px, 10px, -300px);
+    opacity: .5;
+  }
+  100% {
+    top: 0;
+  }
 }
 
-.section-block {
-  background: rgba(255, 255, 255, 0.1);
-  margin: 2em auto;
-  max-width: 48em;
-  padding: 1.5em 2em;
-  width: 80%;
-}
-.section-block > *:first-child {
-  margin-top: 0;
-}
-.section-block > *:last-child {
-  margin-bottom: 0;
+hr {
+  border-radius: 4px;
+  border: 2px solid $c-green-2;
 }
 
-a,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: var(--legacy-green-1);
+@keyframes fadeDown {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: -.25em;
+    transform: scale(1.1) perspective(500px) translate3d(0px, 10px, -100px);
+    opacity: .5;
+  }
+}
+
+a {
+  display: inline-block;
+  position: relative;
+  transform-origin: center;
+
+  &:hover {
+    color: $c-yellow-1;
+    &:hover {
+      // animation: scatter 1.75s infinite;
+
+      $value: ();
+      @for $i from 1 through 100 {
+        $num: $i + px;
+        $pct: $i / 100;
+        $black: (0.4 - $pct)/2.5;
+        $theShadow: $num $num ($i*.25) + px rgba($c-green-1, $black);
+        $value: append($value, $theShadow, comma)
+      }
+
+      text-shadow: $value;
+    }
+  }
+
+  &:active {
+    animation: fadeDown 0.25s forwards;
+  }
 }
