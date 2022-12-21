@@ -23,6 +23,7 @@
     </section>
 
     <nav class="sidebar-nav">
+        <p>Menu (main):</p>
         {{ $currentPage := . }}
         <ul>
             {{ range .Site.Menus.main }}
@@ -34,10 +35,11 @@
     </nav>
 
     <nav class="sidebar-nav">
+        <p>Section Pages:</p>
         <ul>
             {{ range .Site.Menus.sectionPages}}
             <li>
-                <a href="{{ .URL }}" title="{{ .Title }}">asdf {{ .Name }} </a>
+                <a href="{{ .URL }}" title="{{ .Title }}">{{ .Name }} </a>
             </li>
             {{ end }}
         </ul>
