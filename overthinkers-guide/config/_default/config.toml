@@ -5,6 +5,9 @@ languageCode = "en-us"
 theme = "brain"
 title = "Overthinker's Guide to Doing Stuff"
 
+[Params]
+  foo = 'bar'
+
 [markup]
   defaultMarkdownHandler = 'goldmark'
   [markup.asciidocExt]
@@ -52,7 +55,7 @@ title = "Overthinker's Guide to Doing Stuff"
     lineNumbersInTable = true
     noClasses = true
     noHl = false
-    style = 'monokai'
+    style = 'solarized-dark'
     tabWidth = 4
   [markup.tableOfContents]
     endLevel = 3
