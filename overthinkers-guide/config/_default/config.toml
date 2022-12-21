@@ -1,12 +1,23 @@
 baseURL = "https://www.overthinkers-guide.com"
 copyright = "Overthinker's Guide, WTFBBQ"
+# enableGitInfo = true
+enableRobotsTXT = true
 googleanalytics = ""
 languageCode = "en-us"
+sectionPagesMenu = "sectionPages"
 theme = "brain"
 title = "Overthinker's Guide to Doing Stuff"
 
 [Params]
   foo = 'bar'
+
+[menu]
+[[menu.main]]
+  name = 'about'
+  pageref = "about"
+[[menu.main]]
+  name = 'debug'
+  url = '/debug/'
 
 [markup]
   defaultMarkdownHandler = 'goldmark'

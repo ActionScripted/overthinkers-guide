@@ -1,5 +1,7 @@
 <meta charset="utf-8" />
 
+<title>{{ .Title }} - {{ .Site.Title }}</title>
+
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -17,6 +19,7 @@
 "enableSourceMap" (not hugo.IsProduction) "includePaths" (slice
 "node_modules/myscss")) }} {{ $style := resources.Get "styles.scss" |
 resources.ToCSS $options }}
+
 <link
   rel="stylesheet"
   href="{{ $style.Permalink }}"

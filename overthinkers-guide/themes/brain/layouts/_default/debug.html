@@ -22,6 +22,29 @@
     <p>IsProduction: {{ hugo.IsProduction}}</p>
   </section>
 
+  <nav class="sidebar-nav">
+    {{ $currentPage := . }}
+    <ul>
+      {{ range .Site.Menus.main }}
+      <li>
+        <a href="{{ .URL }}" title="{{ .Title }}"> {{ .Name }} </a>
+      </li>
+      {{ end }}
+    </ul>
+  </nav>
+
+  <nav class="sidebar-nav">
+    <ul>
+      {{ range .Site.Menus.sectionPages}}
+      <li>
+        <a href="{{ .URL }}" title="{{ .Title }}">asdf {{ .Name }} </a>
+      </li>
+      {{ end }}
+    </ul>
+  </nav>
+
+  <section>{{/* .Lastmod */}}</section>
+
   <section></section>
 </article>
 {{ end }}
