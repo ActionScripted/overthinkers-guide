@@ -9,7 +9,7 @@ theme = "brain"
 title = "Overthinker's Guide to Doing Stuff"
 
 [Params]
-  foo = 'bar'
+  repoUri = "https://github.com/ActionScripted/overthinkers-guide"
 
 [menu]
 [[menu.main]]
