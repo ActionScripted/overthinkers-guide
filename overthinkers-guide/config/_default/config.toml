@@ -1,6 +1,6 @@
 baseURL = "https://www.overthinkers-guide.com"
 copyright = "Overthinker's Guide, WTFBBQ"
-# enableGitInfo = true
+enableGitInfo = true
 enableRobotsTXT = true
 googleanalytics = ""
 languageCode = "en-us"

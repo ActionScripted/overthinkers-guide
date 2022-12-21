@@ -2,9 +2,8 @@ version: "3.9"
 services:
   hugo:
     image: klakegg/hugo:0.107.0-ext
-    command: server --disableFastRender --source=./overthinkers-guide
+    command: server --source=./overthinkers-guide
     environment:
-      - GIT_DISCOVERY_ACROSS_FILESYSTEM=1
       - HUGO_ENV=development
     ports:
       - "1313:1313"
