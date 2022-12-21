@@ -2,7 +2,7 @@ version: "3.9"
 services:
   hugo:
     image: klakegg/hugo:0.107.0-ext
-    command: server --source=./overthinkers-guide
+    command: server --enableGitInfo --source=./overthinkers-guide
     environment:
       - HUGO_ENV=development
     ports:

@@ -74,5 +74,5 @@ title = "Overthinker's Guide to Doing Stuff"
     startLevel = 2
 
 [permalinks]
-  pages = "/:title/"
-  posts = "posts/:title/"
+  pages = "/:slugorfilename/"
+  posts = "posts/:slug/"
