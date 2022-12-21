@@ -1,8 +1,8 @@
-<footer>
-  <p>Last Modified: {{ .Lastmod }}</p>
-
-  {{/* Local server doesn't have .GitInfo on first run/build */}} {{ if .GitInfo
-  }} {{/* TODO: link to github (git URL in settings?) */}}
-  <p>{{ .GitInfo.Subject }} ({{ .GitInfo.AbbreviatedHash }})</p>
-  {{ end }}
+<footer class="global-footer">
+  <p>
+    {{ .Lastmod.Format "" }} via {{/* Local server doesn't have .GitInfo on
+    first run/build */}} {{ if .GitInfo }} {{/* TODO: link to github (git URL in
+    settings?) */}} {{ .GitInfo.Subject }} ({{ .GitInfo.AbbreviatedHash }}) {{
+    end }}
+  </p>
 </footer>
