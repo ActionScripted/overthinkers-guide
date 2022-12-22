@@ -1,40 +1,36 @@
 {{ define "main" }}
-<main aria-role="main" role="main" class="global-main">
-  <section class="section-block">
+<section class="section-block">
     <h1>{{.Title}}</h1>
 
     {{ with .Params.subtitle }}
     <p class="subtitle">{{.}}</p>
     {{ end }} {{.Content}}
 
-    <div>
-      {{ range first 10 .Site.RegularPages }} {{ .Render "summary"}} {{ end }}
-    </div>
-  </section>
+    <div>{{ range first 10 .Site.RegularPages }} {{ .Render "summary"}} {{ end }}</div>
+</section>
 
-  <section class="section-block">
+<section class="section-block">
     <ul>
-      {{ range .Paginator.Pages }}
-      <li><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a></li>
-      {{ end }}
+        {{ range .Paginator.Pages }}
+        <li><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a></li>
+        {{ end }}
     </ul>
 
     <hr />
 
     <ul>
-      {{ range .Site.Taxonomies.tags }}
-      <li><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a></li>
-      {{ end }}
+        {{ range .Site.Taxonomies.tags }}
+        <li><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a></li>
+        {{ end }}
     </ul>
 
     <hr />
 
     {{ $taxo := "tags" }}
     <ul class="{{ $taxo }}">
-      {{ with ($.Site.GetPage (printf "/%s" $taxo)) }} {{ range .Pages }}
-      <li><a href="{{ .Permalink }}">{{ .Title}}</a></li>
-      {{ end }} {{ end }}
+        {{ with ($.Site.GetPage (printf "/%s" $taxo)) }} {{ range .Pages }}
+        <li><a href="{{ .Permalink }}">{{ .Title}}</a></li>
+        {{ end }} {{ end }}
     </ul>
-  </section>
-</main>
+</section>
 {{ end }}

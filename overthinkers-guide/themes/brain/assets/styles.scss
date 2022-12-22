@@ -131,6 +131,7 @@ hr {
         display: inline-block;
         padding: 1rem;
         text-decoration: none;
+        margin: 0;
 
         &:hover {
             background: $c-blue-1;
@@ -142,26 +143,47 @@ hr {
     }
 
     .brand {
-        $value: ();
-        @for $i from 1 through 20 {
-            $num: ($i * 1) + px;
-            $pct: $i / 100;
-            $black: (0.45 - $pct) / 2.5;
-
-            $shadow: $num $num $i + px rgba($c-green-1, $black);
-            $value: append($value, $shadow, comma)
-        }
-        @for $i from 1 through 20 {
-            $num: ($i * -1) + px;
-            $pct: $i / 100;
-            $black: (0.45 - $pct) / 2.5;
-
-            $shadow: $num $num $i + px rgba($c-green-1, $black);
-            $value: append($value, $shadow, comma)
-        }
+        display: flex;
         transform-origin: center;
-        text-shadow: $value;
+
+        a {
+            $value: ();
+            @for $i from 1 through 20 {
+                $num: ($i * 1) + px;
+                $pct: $i / 100;
+                $black: (0.45 - $pct) / 2.5;
+
+                $shadow: $num $num $i + px rgba($c-green-1, $black);
+                $value: append($value, $shadow, comma)
+            }
+            @for $i from 1 through 20 {
+                $num: ($i * -1) + px;
+                $pct: $i / 100;
+                $black: (0.45 - $pct) / 2.5;
+
+                $shadow: $num $num $i + px rgba($c-green-1, $black);
+                $value: append($value, $shadow, comma)
+            }
+
+            text-shadow: $value;
+        }
     }
+}
+
+.global-footer {
+    text-align: right;
+    padding-right: 1rem;
+}
+
+.global-main {
+    // Use a min-height instead of grid/fixed so mobile
+    // folks don't have a perma-footer to deal with.
+    // TODO: height from elsewhere; this is bogus
+    min-height: calc(100vh - #{(63 * 2) + px});
+    padding: 2rem;
+
+    > *:first-child { margin-top: 0 !important; }
+    > *:last-child { margin-bottom: 0 !important; }
 }
 
 .section-block {
@@ -177,13 +199,10 @@ hr {
     margin-bottom: 0;
 }
 
-
-
 .highlight {
     border: 3px solid $c-blue-2;
     border-radius: 3px;
 }
-
 
 // TODO: something like...
 // https://dev.to/sobhandash/lets-build-a-night-sky-using-pure-scss-2g0n
