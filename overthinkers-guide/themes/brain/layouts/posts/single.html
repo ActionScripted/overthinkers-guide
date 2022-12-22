@@ -17,7 +17,7 @@
                 {{ range . }}
                 <li>
                     {{ $url := "topics" | absURL }}
-                    <a href="{{ $url }} / {{ . | urlize }}">{{ . }}</a>
+                    <a href="{{ $url }}/{{ . | urlize }}">{{ . }}</a>
                 </li>
                 {{ end }}
             </ul>
@@ -26,7 +26,7 @@
                 {{ range . }}
                 <li>
                     {{ $url := "tags" | absURL }}
-                    <a href="{{ $url }} / {{ . | urlize }}">{{ . }}</a>
+                    <a href="{{ $url }}/{{ . | urlize }}">{{ . }}</a>
                 </li>
                 {{ end }}
             </ul>
