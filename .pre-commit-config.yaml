@@ -39,6 +39,7 @@ repos:
       hooks:
           - id: prettier
             # TODO: plugin seems to break things
-            #additional_dependencies:
-            #  - "prettier-plugin-go-template@0.0.13"
+            additional_dependencies:
+                - "prettier"
+                - "prettier-plugin-go-template"
             files: \.(js|ts|jsx|tsx|css|less|html|json|markdown|md|yaml|yml)$

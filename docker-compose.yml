@@ -1,11 +1,11 @@
 version: "3.9"
 services:
-  hugo:
-    image: klakegg/hugo:0.107.0-ext
-    command: server --enableGitInfo --source=./overthinkers-guide
-    environment:
-      - HUGO_ENV=development
-    ports:
-      - "1313:1313"
-    volumes:
-      - "./:/src"
+    hugo:
+        image: klakegg/hugo:0.107.0-ext
+        command: "server ${HUGO_ARGS_SHARED}"
+        environment:
+            - HUGO_ENV
+        ports:
+            - "1313:1313"
+        volumes:
+            - "./:/src"

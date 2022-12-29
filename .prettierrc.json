@@ -1,0 +1,13 @@
+{
+    "bracketSpacing": true,
+    "editorConfig": true,
+    "goTemplateBracketSpacing": true,
+    "traillingComma": "all",
+    "useTabs": false,
+    "overrides": [
+        {
+            "files": ["*.html"],
+            "options": { "parser": "go-template" }
+        }
+    ]
+}

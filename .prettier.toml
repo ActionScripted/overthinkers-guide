@@ -1,9 +1,0 @@
-editorConfig = true
-#goTemplateBracketSpacing = true
-traillingComma = "all"
-useTabs = false
-
-#[[overrides]]
-#  files = ["*.html"]
-#[overrides.options]
-#  parser = "go-template"
