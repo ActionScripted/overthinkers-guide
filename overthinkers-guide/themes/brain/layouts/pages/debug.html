@@ -1,52 +1,53 @@
 {{ define "main" }}
-<section class="section-block">
+  <section class="section-block">
     <article class="">
-        <section class="">
-            <h1>{{ .Title }}</h1>
-            {{ .Content }}
-        </section>
+      <section class="">
+        <h1>{{ .Title }}</h1>
+        {{ .Content }}
+      </section>
 
-        <section>
-            <h1 class="text-3xl text-blue-700 font-bold underline">thisSiteIsNew</h1>
-            <p class="bg-sky-600 text-slate-100">
-                The thisSiteIsNew uses a theme called thisThemeIsNew
-            </p>
-        </section>
+      <section>
+        <h1 class="text-3xl text-blue-700 font-bold underline">thisSiteIsNew</h1>
+        <p class="bg-sky-600 text-slate-100">
+          The thisSiteIsNew uses a theme called thisThemeIsNew
+        </p>
+      </section>
 
-        <section>
-            <img src="https://www.gravatar.com/avatar/{{ md5 "actionscripted@gmail.com"
-            }}?s=100d=identicon">
-        </section>
+      <section>
+        <img
+          src="https://www.gravatar.com/avatar/{{ md5 "actionscripted@gmail.com" }}?s=100d=identicon"
+        />
+      </section>
 
-        <section>
-            <p>Environment: {{ hugo.Environment }}</p>
-            <p>IsProduction: {{ hugo.IsProduction}}</p>
-        </section>
+      <section>
+        <p>Environment: {{ hugo.Environment }}</p>
+        <p>IsProduction: {{ hugo.IsProduction }}</p>
+      </section>
 
-        <nav class="sidebar-nav">
-            <p>Menu (main):</p>
-            {{ $currentPage := . }}
-            <ul>
-                {{ range .Site.Menus.main }}
-                <li>
-                    <a href="{{ .URL }}" title="{{ .Title }}"> {{ .Name }} </a>
-                </li>
-                {{ end }}
-            </ul>
-        </nav>
+      <nav class="sidebar-nav">
+        <p>Menu (main):</p>
+        {{ $currentPage := . }}
+        <ul>
+          {{ range .Site.Menus.main }}
+            <li>
+              <a href="{{ .URL }}" title="{{ .Title }}"> {{ .Name }} </a>
+            </li>
+          {{ end }}
+        </ul>
+      </nav>
 
-        <nav class="sidebar-nav">
-            <p>Section Pages:</p>
-            <ul>
-                {{ range .Site.Menus.sectionPages}}
-                <li>
-                    <a href="{{ .URL }}" title="{{ .Title }}">{{ .Name }} </a>
-                </li>
-                {{ end }}
-            </ul>
-        </nav>
+      <nav class="sidebar-nav">
+        <p>Section Pages:</p>
+        <ul>
+          {{ range .Site.Menus.sectionPages }}
+            <li>
+              <a href="{{ .URL }}" title="{{ .Title }}">{{ .Name }} </a>
+            </li>
+          {{ end }}
+        </ul>
+      </nav>
 
-        <section></section>
+      <section></section>
     </article>
-</section>
+  </section>
 {{ end }}

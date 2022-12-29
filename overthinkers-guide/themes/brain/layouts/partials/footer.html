@@ -1,10 +1,14 @@
 <footer class="global-footer">
-    <p>
-        {{ .Lastmod.Format "2006-01-02" }} {{/* Local server doesn't have .GitInfo on first
-        run/build */}} {{ if .GitInfo }} @
-        <a href="{{ .Site.Params.repoUri }}/commit/{{ .GitInfo.Hash }}">
-            {{ .GitInfo.Subject }} ({{ .GitInfo.AbbreviatedHash }})
-        </a>
-        {{ end }}
-    </p>
+  <p>
+    {{ .Lastmod.Format "2006-01-02" }}
+    {{/* Local server doesn't have .GitInfo on first
+      run/build
+    */}}
+    {{ if .GitInfo }}
+      @
+      <a href="{{ .Site.Params.repoUri }}/commit/{{ .GitInfo.Hash }}">
+        {{ .GitInfo.Subject }} ({{ .GitInfo.AbbreviatedHash }})
+      </a>
+    {{ end }}
+  </p>
 </footer>
