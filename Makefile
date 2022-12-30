@@ -5,6 +5,10 @@ ifneq (,$(wildcard ./.env))
 endif
 
 
+# Args/vars
+docker_bin_path := "/Applications/Docker.app/Contents/Resources/bin"
+
+
 # Recipes: Default
 .DEFAULT_GOAL := help
 
@@ -45,5 +49,6 @@ setup: ## Setup local environment
 	@cp .env.example .env
 	@pre-commit install
 up: ## Run services locally
-	@docker compose up
-	@open "http://localhost:1313"
+	@echo Waiting for Docker Desktop...
+	@while ! "${docker_bin_path}"/docker info &>/dev/null; do sleep 1; done
+	@docker compose up & sleep 2; open "http://localhost:1313"
