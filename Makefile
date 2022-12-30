@@ -51,4 +51,4 @@ setup: ## Setup local environment
 up: ## Run services locally
 	@echo Waiting for Docker Desktop...
 	@while ! "${docker_bin_path}"/docker info &>/dev/null; do sleep 1; done
-	@docker compose up & sleep 2; open "http://localhost:1313"
+	@sleep 2 && open "http://localhost:1313" & docker compose up
