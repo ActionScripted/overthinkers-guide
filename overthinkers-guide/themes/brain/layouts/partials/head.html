@@ -25,3 +25,6 @@
 
 
 <link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}" />
+
+{{ $scripts := resources.Get "main.js" | js.Build (dict "params" (dict "api" "https://example.org/api")) }}
+<script src="{{ $scripts.Permalink }}"></script>

@@ -1,0 +1,14 @@
+{
+  "comments": {
+    "dependencies": {
+      "three": "brain"
+    },
+    "devDependencies": {}
+  },
+  "dependencies": {
+    "three": "^0.148.0"
+  },
+  "devDependencies": {},
+  "name": "overthinkers-guide",
+  "version": "0.1.0"
+}

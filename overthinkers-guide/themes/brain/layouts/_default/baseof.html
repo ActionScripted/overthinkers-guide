@@ -2,6 +2,8 @@
 <html>
   {{- partial "head.html" . -}}
   <body>
+    <div id="changeme"></div>
+    <noscript><!-- nothing, but maybe someday --></noscript>
     {{- partial "header.html" . -}}
     <main aria-role="main" role="main" class="global-main">
       {{- block "main" . }}{{- end }}
