@@ -22095,7 +22095,7 @@ ${e}`);
       width: window.innerWidth
     });
     canvas.appendChild(app.view);
-    const starTexture = Texture.from("star.png");
+    const starTexture = Texture.from("/star.png");
     const starAmount = 2e4;
     let cameraZ = 0;
     const fov = 30;
