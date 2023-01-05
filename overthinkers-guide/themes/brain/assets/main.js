@@ -161,7 +161,7 @@ window.addEventListener("DOMContentLoaded", () => {
   canvas.appendChild(app.view);
 
   // Get the texture for star.
-  const starTexture = PIXI.Texture.from("star.png");
+  const starTexture = PIXI.Texture.from("/star.png");
 
   const starAmount = 20000;
   let cameraZ = 0;
