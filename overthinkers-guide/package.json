@@ -1,11 +1,13 @@
 {
   "comments": {
     "dependencies": {
+      "pixi.js": "brain",
       "three": "brain"
     },
     "devDependencies": {}
   },
   "dependencies": {
+    "pixi.js": "^7.0.5",
     "three": "^0.148.0"
   },
   "devDependencies": {},
